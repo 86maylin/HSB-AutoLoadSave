@@ -52,6 +52,7 @@ namespace AutoLoadSave.Patches
                     break;
                 }
             }
+            yield return new WaitUntil(() => { return !SceneLoader.Instance.IsExecutingTearDownAndLoad; });
             if (AutoLoadSave.Config_shiftType.Value == (int)AutoLoadSave.SaveType.OpenShift)
             {
                 instance.GoToNext(AutoLoadSave.Config_drainDisabled.Value);
